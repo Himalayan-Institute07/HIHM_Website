@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himalayan Institute of Hospitality Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Himalayan Institute of Hospitality Management</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Welcome to Himalayan Institute of Hospitality Management</h2>
+            <p>At Himalayan Institute of Hospitality Management, we offer top-notch education and training in the field of hospitality management. Our mission is to provide students with the skills and knowledge they need to excel in the hospitality industry.</p>
+            <img src="campus.jpg" alt="Campus Image">
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>The Himalayan Institute of Hospitality Management is dedicated to providing world-class education and training in hospitality management. Our faculty consists of industry professionals with extensive experience and a passion for teaching.</p>
+        </section>
+        <section id="courses">
+            <h2>Courses</h2>
+            <div class="course">
+                <img src="bakery.jpg" alt="BAKERY">
+                <h3>BAKERY</h3>
+                <p>Topics covered:</p>
+                <ul>
+    <li> - Bread       <br>      - Cookies     <br>          - Cakes<br> 
+    - Pies <br>             - Rolls & Buns    <br>     - Pastry   <br> 
+    - Baker responsibility         <br>            and others  </li>
+                </ul>
+            </div>
+            <div class="course">
+                <img src="dhm.jpg" alt="DIPLOMA IN HOTEL MANAGEMENT">
+                <h3>DIPLOMA IN HOTEL MANAGEMENT</h3>
+                <p>Topics covered:</p>
+                <ul>
+            <li> - Front office   <br>           - Food production<br>
+   - House Keeping   <br>          - F & B Service<br>
+   - Baking    <br>                - Barista<br>
+   - International Cuisine  <br>
+                </ul>
+            </div>
+            <div class="course">
+                <img src="barista.jpg" alt="BARISTA">
+                <h3>BARISTA</h3>
+                <p>Topics covered:</p>
+                <ul>
+                    <li> -Operation of coffee grinder &  
+    Espresso machine   <br>      
+ - Brewing Techniques<br>
+ - Latte Art and Milk frothing <br>
+ - Equipment Handling<br>
+- Pour-Over      <br>
+</li>
+                </ul>
+            </div>
+            <div class="course">
+                <img src="tandoori.jpg" alt="TANDOORI">
+                <h3>TANDOORI</h3>
+                <p>Topics covered:</p>
+                <ul>
+                    <li> - Equipment Familiarity  <br>    - Nan/ Roti<br>
+    - Cooking Techniques  <br>       - Safety Practice   <br></li>
+                </ul>
+            </div>
+            <div class="course">
+                <img src="cookery.jpg" alt="COOKERY">
+                <h3>COOKERY</h3>
+                <p>Topics covered:</p>
+                <ul>
+                    <li>- Food Production       <br>   - Knife skills<br>
+    - Cooking Techniques    <br>   - Culinary arts<br>
+    - Seasoning & Flavor   <br>    - Baking<br>
+    - International Cuisine <br> </li>
+                </ul>
+            </div>
+
+        </section>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>If you have any questions or need further information, please feel free to contact us:</p>
+            <p>CEO: Pratik Pokhrel</p>
+            <p>Phone: +977-9847151234 / 977-9762744621</p>
+            <p>Address: Sainamaina-10, Saljhandi, Rupandehi, Nepal</p>
+            <p>Email: himalayaninstiture07@gmail.com</p>
+            <p> tiktok: @himalayan.institu</p>
+            <h3>Share our QR code with others</h3>
+           
+            <img src="qrcode.png" alt="QR Code">
+            <br><br>
+            <button onclick="shareQRCode()">Share QR Code</button>
+        </section>
+    </main>
+
+    <script>
+        function shareQRCode() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Himalayan Institute of Hospitality Management',
+                    text: 'Scan the QR code to learn more about us!',
+                    url: 'qrcode.png'
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                }).catch((error) => {
+                    console.log('Error sharing:', error);
+                });
+            } else {
+                alert('Web Share API is not supported in your browser.');
+            }
+        }
+    </script>
+
+</body>
+</html>
