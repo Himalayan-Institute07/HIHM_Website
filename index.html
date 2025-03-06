@@ -131,69 +131,89 @@
             </div>
         </section>
         </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
-            
-            <label for="contact">Contact:</label>
-            <input type="tel" id="contact" name="contact" required><br><br>
-            
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required><br><br>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            
-            <label for="courses">Courses:</label>
-            <input type="text" id="courses" name="courses" required><br><br>
-            
-            <label for="time">Time:</label>
-            <input type="text" id="time" name="time" required><br><br>
-            
-            <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob" required><br><br>
-            
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required><br><br>
-            
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender" required>
-                <option value="">Select</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select><br><br>
-            
-            <input type="submit" value="Send">
-        </form>
-    </section>
+   <section id="contact">
+    <h2>Fill Out the Form</h2>
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        <label for="contact">Contact:</label>
+        <input type="tel" id="contact" name="contact" required><br><br>
 
-            var name = document.getElementById('name').value;
-            var contact = document.getElementById('contact').value;
-            var address = document.getElementById('address').value;
-            var email = document.getElementById('email').value;
-            var courses = document.getElementById('courses').value;
-            var time = document.getElementById('time').value;
-            var dob = document.getElementById('dob').value;
-            var age = document.getElementById('age').value;
-            var gender = document.getElementById('gender').value;
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br><br>
 
-            var mailto_link = 'mailto:himalayaninstitute07@gmail.com'
-                            + '?subject=' + encodeURIComponent('Student Submission Form')
-                            + '&body=' + encodeURIComponent('Name: ' + name + '\nContact: ' + contact 
-                            + '\nAddress: ' + address + '\nEmail: ' + email + '\nCourses: ' + courses 
-                            + '\nTime: ' + time + '\nDate of Birth: ' + dob + '\nAge: ' + age 
-                            + '\nGender: ' + gender);
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
 
-            window.location.href = mailto_link;
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="gmail">Gmail ID:</label>
+        <input type="email" id="gmail" name="gmail" required><br><br>
+
+        <label for="time">Preferred Time:</label>
+        <input type="text" id="time" name="time" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <h3>Courses:</h3>
+        <input type="checkbox" id="barista" name="courses" value="Barista"> Barista<br>
+        <input type="checkbox" id="bakery" name="courses" value="Bakery"> Bakery<br>
+        <input type="checkbox" id="dhm" name="courses" value="Diploma in Hotel Management"> Diploma in Hotel Management (DHM)<br>
+        <input type="checkbox" id="cookery" name="courses" value="Cookery"> Cookery<br>
+        <input type="checkbox" id="tandoori" name="courses" value="Tandoori"> Tandoori<br><br>
+
+        <input type="submit" value="Send">
+    </form>
+</section>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Collect form data
+        var name = document.getElementById('name').value;
+        var contact = document.getElementById('contact').value;
+        var address = document.getElementById('address').value;
+        var dob = document.getElementById('dob').value;
+        var age = document.getElementById('age').value;
+        var gmail = document.getElementById('gmail').value;
+        var time = document.getElementById('time').value;
+        var gender = document.getElementById('gender').value;
+
+        // Collect selected courses
+        var selectedCourses = [];
+        var courseCheckboxes = document.querySelectorAll('input[name="courses"]:checked');
+        courseCheckboxes.forEach(function(checkbox) {
+            selectedCourses.push(checkbox.value);
         });
-    </script>
+
+        // Format the email body
+        var mailto_link = 'mailto:himalayaninstitute07@gmail.com'
+                        + '?subject=' + encodeURIComponent('Course Selection Form')
+                        + '&body=' + encodeURIComponent(
+                            'Name: ' + name + '\n' +
+                            'Contact: ' + contact + '\n' +
+                            'Address: ' + address + '\n' +
+                            'Date of Birth: ' + dob + '\n' +
+                            'Age: ' + age + '\n' +
+                            'Gmail ID: ' + gmail + '\n' +
+                            'Preferred Time: ' + time + '\n' +
+                            'Gender: ' + gender + '\n' +
+                            'Selected Courses: ' + selectedCourses.join(', ')
+                        );
+
+        // Open email client with pre-filled details
+        window.location.href = mailto_link;
+    });
+</script>
         <section id="contact">
             <h2>Contact</h2>
             <p>If you have any questions or need further information, please feel free to contact us:</p>
