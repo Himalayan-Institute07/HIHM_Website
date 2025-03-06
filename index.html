@@ -178,7 +178,7 @@
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent default form submission
 
-        // Collect form data
+        // Collect form values
         var name = document.getElementById('name').value;
         var contact = document.getElementById('contact').value;
         var address = document.getElementById('address').value;
@@ -197,7 +197,7 @@
 
         // Format the email body
         var mailto_link = 'mailto:himalayaninstitute07@gmail.com'
-                        + '?subject=' + encodeURIComponent('Course Selection Form')
+                        + '?subject=' + encodeURIComponent('Student Registration Form')
                         + '&body=' + encodeURIComponent(
                             'Name: ' + name + '\n' +
                             'Contact: ' + contact + '\n' +
@@ -210,7 +210,7 @@
                             'Selected Courses: ' + selectedCourses.join(', ')
                         );
 
-        // Open email client with pre-filled details
+        // Redirect to mailto link
         window.location.href = mailto_link;
     });
 </script>
